@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -30,16 +30,13 @@ train_df = pd.concat([train_df, pd.get_dummies(train_df['Embarked'], prefix='Emb
 test_df = pd.concat([test_df, pd.get_dummies(test_df['Embarked'], prefix='Embarked')], axis=0)
 
 test_df['Fare'].fillna(test_df['Fare'].dropna().mean(), inplace=True)
-=======
+
 import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> epic-branch-4
+
 import pandas
 import numpy
 from sklearn.ensemble import RandomForestClassifier
@@ -85,7 +82,7 @@ X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_st
 model = RandomForestClassifier(n_estimators=100, random_state=0)
 model.fit(X_train, y_train)
 
-<<<<<<< HEAD
+
 # Developer 3 - Parte 3
 
 '''Hacemos predicciones'''
@@ -93,7 +90,7 @@ y_pred = model.predict(X_val)
 accuracy = accuracy_score(y_val, y_pred)
 importances = pd.DataFrame({'feature':X_train.columns,'importance':np.round(model.feature_importances_,3)})
 importances = importances.sort_values('importance',ascending=False).set_index('feature')
-=======
+
 # Developer 3 - Parte 4
 
 '''
@@ -109,11 +106,6 @@ plt.xlabel('Age Group')
 plt.ylabel('Number of passengers')
 plt.title('Distribution of passengers by age and survival')
 st.pyplot()
->>>>>>> branch-ticket-3-2
-<<<<<<< HEAD
->>>>>>> epic-branch-3
-=======
-
 
 '''
 Visualizamos la variable Clase
@@ -125,7 +117,7 @@ class_df.plot(kind='bar', stacked=True)
 plt.xlabel('Class')
 plt.ylabel('Number of passengers')
 plt.title('Survival rate by class')
-=======
+
 '''
 Visualizamos la variable Sexo
 '''
@@ -136,6 +128,6 @@ sex_df.plot(kind='bar', stacked=True)
 plt.xlabel('Sex')
 plt.ylabel('Number of passengers')
 plt.title('Survival rate by sex')
->>>>>>> branch-ticket-2
+
 st.pyplot()
->>>>>>> epic-branch-4
+
