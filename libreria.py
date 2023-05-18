@@ -47,3 +47,11 @@ Creamos el modelo
 X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=0)
 model = RandomForestClassifier(n_estimators=100, random_state=0)
 model.fit(X_train, y_train)
+
+# Developer 3 - Parte 3
+
+'''Hacemos predicciones'''
+y_pred = model.predict(X_val)
+accuracy = accuracy_score(y_val, y_pred)
+importances = pd.DataFrame({'feature':X_train.columns,'importance':np.round(model.feature_importances_,3)})
+importances = importances.sort_values('importance',ascending=False).set_index('feature')
